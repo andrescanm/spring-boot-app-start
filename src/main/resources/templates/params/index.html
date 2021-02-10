@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8 /">
+<title th:text="${titulo}"></title>
+<link rel="shortcut icon" href="#">
+</head>
+<body>
+	<h1 th:text="${titulo}"></h1>
+	<ul>
+		<li>
+			<a th:href="@{/params/string/(texto='Hola Mundo...')}">Testing Spring Boot [Hola mundo]...</a>
+		</li>
+		<li>
+			<a th:href="@{/params/string/(texto='Chao Mundo!')}">Testing Spring Boot [Chao mundo]...</a>
+		</li>
+		<li>
+			<a th:href="@{/params/mix-params( saludo = 'Good Morning Spring Boot!', numero = 7 )}">Testing Spring Boot [Mix Params]...</a>
+		</li>
+		<li>
+			<a th:href="@{/params/mix-params-HttpServletRequest( saludo = 'Good Morning Spring Boot!', numero = 7 )}">Testing Spring Boot [Mix Params HttpServletRequest]...</a>
+		</li>
+	</ul>
+	<p>Año 2021</p>
+</body>
+</html>

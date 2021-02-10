@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8 /">
+<title th:text="${titulo}"></title>
+<link rel="shortcut icon" href="#">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+	integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+	crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<br>
+		<h1 th:text="${titulo}"></h1>
+		<div th:if="${usuarios.size() == 0}">
+			<p>No hay usuarios en la lista...</p>
+		</div>
+		<div th:if="${usuarios.size() > 0}">
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>Nombre</th>
+						<th>Apellido</th>
+						<th>Email</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="usuario : ${usuarios}">
+						<td th:text="${usuario.nombre}"></td>
+						<td th:text="${usuario.apellido}"></td>
+						<td th:text="${usuario.email}"></td>
+					</tr>
+				</tfoot>
+			</table>
+		</div>
+		<p>Año 2021</p>
+	</div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8 /">
+<title th:text="${titulo}"></title>
+<link rel="shortcut icon" href="#">
+</head>
+<body>
+	<h1 th:text="${titulo}"></h1>
+	<div th:text="${respuesta}"></div>
+	<ul>
+		<li>
+			<a th:href="@{/variables/string/} + 'Link 1'">Testing Spring Boot 1</a>
+		</li>
+		<li>
+			<a th:href="@{/variables/string/} + 'Link 2'">Testing Spring Boot 2</a>
+		</li>
+		<li>
+			<a th:href="@{/variables/string/} + 'Link 3' + '/' + 7">Testing Spring Boot 3</a>
+		</li>
+	</ul>
+	<p>Año 2021</p>
+</body>
+</html>

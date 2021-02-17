@@ -10,6 +10,6 @@
 	<span th:text="${usuario.nombre} + ' ' + ${usuario.apellido}"></span>
 	<span th:if="${usuario.email}" th:text="${usuario.email}"></span>
 	<span th:if="${usuario.email == null}">Email no registrado.</span>
-	<p>Año 2021</p>
+	<p th:text="${fecha}"></p>
 </body>
 </html>

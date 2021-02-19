@@ -16,25 +16,25 @@ import com.capirona.springboot.web.app.models.Usuario;
 public class IndexController {
 	
 	@Value("${texto.indexcontroller.index.titulo}")
-	private String textoIndex;
+	private String tituloIndex;
 	
 	@Value("${texto.indexcontroller.perfil.titulo}")
-	private String textoPerfil;
+	private String tituloPerfil;
 	
 	@Value("${texto.indexcontroller.listar.titulo}")
-	private String textoListar;
+	private String tituloListar;
 	private LocalDate localDate = LocalDate.now();
 	
 	@GetMapping({"/", "index", "home"})
 	public String index(Model model) {
-		model.addAttribute("titulo", textoIndex);
+		model.addAttribute("titulo", tituloIndex);
 		model.addAttribute("fecha", "Copyright © - " + localDate);
 		return "index";
 	}
 
 	@GetMapping({"/profile", "app/profile"})
 	public String profile(Model model) {
-		model.addAttribute("titulo", textoPerfil);
+		model.addAttribute("titulo", tituloPerfil);
 		Usuario usuario = new Usuario();
 		usuario.setNombre("Andrés");
 		usuario.setApellido("Cañón");
@@ -46,7 +46,7 @@ public class IndexController {
 	
 	@GetMapping({"app/list"})
 	public String list(Model model) {
-		model.addAttribute("titulo", textoListar);
+		model.addAttribute("titulo", tituloListar);
 		//List<Usuario> usuarios = new ArrayList<>();
 		//usuarios.add(new Usuario("Andrés", "Cañón", "andres.co@hotmail.com"));
 		//usuarios.add(new Usuario("Freddy", "Krueger", "nightmare@mail.com"));

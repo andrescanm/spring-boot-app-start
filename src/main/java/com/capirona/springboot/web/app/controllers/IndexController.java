@@ -25,7 +25,7 @@ public class IndexController {
 	private String tituloListar;
 	private LocalDate localDate = LocalDate.now();
 	
-	@GetMapping({"/", "index", "home"})
+	@GetMapping({"index", "home"})
 	public String index(Model model) {
 		model.addAttribute("titulo", tituloIndex);
 		model.addAttribute("fecha", "Copyright © - " + localDate);
